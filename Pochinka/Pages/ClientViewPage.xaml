@@ -9,6 +9,110 @@
       Title="ClientViewPage">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBack"
+                Content="Назад"
+                Grid.Column="0"
+                Grid.Row="0"
+                FontSize="20"
+                Click="btnBack_Click"/>
+
+        <TextBlock Text="Фамилия: "
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Surname}"/>
+        </TextBlock>
+
+        <TextBlock Text="Имя: "
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Name}"/>
+        </TextBlock>
+
+        <TextBlock Text="Отчество: "
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="3"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Lastname}"/>
+        </TextBlock>
+
+        <TextBlock Text="Пол: "
+                   Grid.Column="0"
+                   Grid.Row="4"
+                   FontSize="20"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Gender.Name}"/>
+        </TextBlock>
+
+        <TextBlock Text="Телефон: "
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="5"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Phone}"/>
+        </TextBlock>
+
+        <TextBlock Text="Дата рождения: "
+                   Grid.Column="2" Grid.ColumnSpan="2"
+                   Grid.Row="1"
+                   FontSize="20"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.DateBith}"/>
+        </TextBlock>
+
+        <TextBlock Text="Почта: "
+                   Grid.Column="2" Grid.ColumnSpan="2"
+                   Grid.Row="2"
+                   FontSize="20"
+                   Margin="20, 0">
+            <Run Text="{Binding Client.Email}"/>
+        </TextBlock>
+
+        <ScrollViewer Grid.Row="3" Grid.RowSpan="4"
+                      Grid.Column="2" Grid.ColumnSpan="4"
+                      Margin="20">
+            <ListView x:Name="lvHistory"
+                      ItemsSource="{Binding ClientsService}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Услуга" DisplayMemberBinding="{Binding Service.Name}"/>
+                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding DateBegin}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
         
     </Grid>
 </Page>

@@ -38,5 +38,37 @@
                 Grid.Column="3"
                 Grid.Row="0" Grid.ColumnSpan="3"
                 FontSize="22"/>
+
+        <TextBox x:Name="tbSearch"
+                 Grid.Row="1"
+                 Grid.Column="0" Grid.ColumnSpan="2"
+                 FontSize="22"
+                 SelectionChanged="tbSearch_SelectionChanged"
+                 VerticalAlignment="Center"
+                 Margin="10, 0"/>
+
+        <Button x:Name="btnAdd"
+                Content="Добавить"
+                Grid.Column="4" Grid.ColumnSpan="2"
+                Grid.Row="1"
+                FontSize="22"
+                VerticalAlignment="Center"
+                Margin="10, 0"
+                Click="btnAdd_Click"/>
+
+
+        <ListView x:Name="lvService"
+                  Grid.Row="2" Grid.RowSpan="6"
+                  Grid.Column="0" Grid.ColumnSpan="10"
+                  ItemsSource="{Binding Services}"
+                  FontSize="22">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Продролжительность" DisplayMemberBinding="{Binding Duration}"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
