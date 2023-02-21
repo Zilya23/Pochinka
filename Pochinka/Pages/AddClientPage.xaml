@@ -1,0 +1,136 @@
+﻿<Page x:Class="Pochinka.Pages.AddClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pochinka.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddClientPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBack"
+                Content="Назад"
+                Grid.Column="0"
+                Grid.Row="0"
+                FontSize="20"
+                Click="btnBack_Click"/>
+
+        <Button x:Name="btnAdd"
+                Content="Сохранить"
+                Grid.Column="6"
+                Grid.Row="0"
+                FontSize="20"
+                Click="btnAdd_Click"/>
+
+        <TextBlock Text="Фамилия: "
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <TextBox Text="{Binding Client.Surname}"
+                 Grid.Row="2"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 FontSize="20"
+                 VerticalAlignment="Bottom"
+                 Margin="20, 0"/>
+
+        <TextBlock Text="Имя: "
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <TextBox Text="{Binding Client.Name}"
+                 Grid.Row="3"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 FontSize="20"
+                 VerticalAlignment="Bottom"
+                 Margin="20, 0"/>
+
+        <TextBlock Text="Отчество: "
+                   Grid.Column="0"
+                   Grid.Row="4"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <TextBox Text="{Binding Client.Lastname}"
+                 Grid.Row="4"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 FontSize="20"
+                 VerticalAlignment="Bottom"
+                 Margin="20, 0"/>
+
+        <TextBlock Text="Пол: "
+                   Grid.Column="0"
+                   Grid.Row="5"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <ComboBox Name="cbGender"
+                  SelectedItem="{Binding Client.Gender}"
+                  Grid.Row="5"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  FontSize="20"
+                  VerticalAlignment="Bottom"
+                  Margin="20, 0"/>
+
+        <TextBlock Text="Телефон: "
+                   Grid.Column="3"
+                   Grid.Row="2"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <TextBox Text="{Binding Client.Phone}"
+                 Grid.Row="2"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 FontSize="20"
+                 VerticalAlignment="Bottom"
+                 Margin="20, 0"/>
+
+        <TextBlock Text="Дата рождения: "
+                   Grid.Column="3" Grid.ColumnSpan="2"
+                   Grid.Row="3"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <DatePicker SelectedDate="{Binding Client.DateBirth}"
+                    Grid.Column="3" Grid.ColumnSpan="3"
+                    Grid.Row="3"
+                    FontSize="20"
+                    VerticalAlignment="Bottom"
+                    Margin="20, 0"/>
+
+        <TextBlock Text="Почта: "
+                   Grid.Column="3"
+                   Grid.Row="4"
+                   FontSize="20"
+                   Margin="20, 0"/>
+        <TextBox Text="{Binding Client.Email}"
+                 Grid.Row="4"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 FontSize="20"
+                 VerticalAlignment="Bottom"
+                 Margin="20, 0"/>
+
+    </Grid>
+</Page>
